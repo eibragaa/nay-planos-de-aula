@@ -75,5 +75,5 @@ python_bin="$repo_dir/.venv/bin/python"
   explicitamente para versioná-los no repositório.
 - Não ler, copiar ou expor `.env`, `auth.json`, tokens ou chaves SSH. O gerador
   não precisa de credenciais.
-- Após atualizar o repositório, executar `./install.sh --hermes` e
-  `hermes skills audit`.
+- Após atualizar o repositório, executar `./install.sh --hermes` e confirmar a
+  descoberta com `hermes skills list`.

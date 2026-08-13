@@ -11,7 +11,6 @@ git clone https://github.com/eibragaa/nay-planos-de-aula.git
 cd nay-planos-de-aula
 chmod +x install.sh
 ./install.sh --hermes
-hermes skills audit
 hermes skills list
 ```
 
@@ -50,7 +49,7 @@ Se as datas não forem informadas, a skill usa a próxima semana de segunda a se
 cd nay-planos-de-aula
 git pull --ff-only
 ./install.sh --hermes
-hermes skills audit
+hermes skills list
 ```
 
 ## Gerar manualmente

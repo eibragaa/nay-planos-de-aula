@@ -24,7 +24,7 @@ Para atualizar o ambiente:
 cd /root/repositorio/nay-planos-de-aula
 git pull --ff-only
 ./install.sh --hermes
-hermes skills audit
+hermes skills list
 ```
 
 ## Execução
