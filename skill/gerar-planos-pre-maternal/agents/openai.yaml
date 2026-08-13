@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planos de Aula Pré-Maternal"
+  short_description: "Gera planos semanais fiéis ao modelo da escola"
+  default_prompt: "Use $gerar-planos-pre-maternal para criar o plano semanal a partir dos temas informados."

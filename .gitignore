@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.codex-template-task/
+outputs/
+*.tmp
+~$*.docx
