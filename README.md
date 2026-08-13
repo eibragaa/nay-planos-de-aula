@@ -2,18 +2,31 @@
 
 Repositório dos planejamentos semanais da turma Pré-Maternal da Creche e Pré-Escola Planeta Bebê. Inclui o modelo Word original e uma skill para gerar novos planos a partir de um tema central ou de cinco temas diários.
 
-## Instalar no homelab Linux
+## Instalar no homelab com Hermes
 
 ```bash
-git clone git@github.com:eibragaa/nay-planos-de-aula.git
+mkdir -p /root/repositorio
+cd /root/repositorio
+git clone https://github.com/eibragaa/nay-planos-de-aula.git
 cd nay-planos-de-aula
 chmod +x install.sh
-./install.sh
+./install.sh --hermes
+hermes skills audit
+hermes skills list
 ```
 
-O instalador cria `.venv`, instala `lxml` e vincula a skill em `~/.codex/skills/gerar-planos-pre-maternal`. Reinicie o Codex após a primeira instalação.
+O instalador cria `.venv`, instala `lxml` e vincula a skill em
+`/root/.hermes/skills/gerar-planos-pre-maternal`. Abra uma nova sessão do
+Hermes após a primeira instalação.
 
-## Usar com o Codex
+O arquivo `AGENTS.md` contém as regras que o Hermes deve seguir ao trabalhar
+dentro deste repositório. O procedimento completo está em
+`skill/gerar-planos-pre-maternal/SKILL.md`.
+
+Para instalar no Codex, use `./install.sh --codex`. Para disponibilizar a skill
+nos dois agentes, use `./install.sh --both`.
+
+## Pedir ao Hermes ou ao Codex
 
 Exemplo com temas diários:
 
@@ -36,7 +49,8 @@ Se as datas não forem informadas, a skill usa a próxima semana de segunda a se
 ```bash
 cd nay-planos-de-aula
 git pull --ff-only
-./install.sh
+./install.sh --hermes
+hermes skills audit
 ```
 
 ## Gerar manualmente

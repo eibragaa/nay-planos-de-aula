@@ -55,3 +55,25 @@ Produzir uma cópia preenchida do modelo em `assets/modelo-planejamento-semanal.
 ## Uso no Linux
 
 O gerador requer Python 3.10+ e `lxml`. Não requer Microsoft Word. O LibreOffice é opcional e serve somente para a conferência visual.
+
+## Execução no Hermes
+
+Quando a skill estiver vinculada em `/root/.hermes/skills`, localizar os
+caminhos canônicos sem copiar a skill para outro lugar:
+
+```bash
+skill_dir="$(readlink -f /root/.hermes/skills/gerar-planos-pre-maternal)"
+repo_dir="$(dirname "$(dirname "$skill_dir")")"
+python_bin="$repo_dir/.venv/bin/python"
+```
+
+- Ler este arquivo inteiro e as duas referências indicadas no fluxo antes de
+  criar o JSON.
+- Usar `America/Manaus` para interpretar “próxima semana” quando o usuário não
+  informar datas.
+- Gravar arquivos finais em `$repo_dir/outputs`, salvo quando o usuário pedir
+  explicitamente para versioná-los no repositório.
+- Não ler, copiar ou expor `.env`, `auth.json`, tokens ou chaves SSH. O gerador
+  não precisa de credenciais.
+- Após atualizar o repositório, executar `./install.sh --hermes` e
+  `hermes skills audit`.
